@@ -1,0 +1,24 @@
+version: "3"
+services:
+  db:
+    image: health-db
+    build: .
+    container_name: health-db
+    working_dir: /dump
+    volumes:
+      - /D/Projects/health-db/dump:/dump
+      - /D/Projects/health-db/data:/var/lib/postgresql/data
+    ports:
+      - 6432:5432
+    environment:
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_DB: postgres
+      PGDATA: /var/lib/postgresql/data/pgdata
+    restart: always
+    tty: true
+    networks:
+      - health-networks
+networks:
+  health-networks:
+    external: true
