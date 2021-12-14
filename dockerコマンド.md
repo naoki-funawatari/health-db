@@ -9,3 +9,5 @@ docker exec -it health-db /bin/bash
 
 psql -U postgres -d postgres
 psql -U health -d healthes
+
+locale -a

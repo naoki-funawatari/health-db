@@ -9,7 +9,7 @@ psql -U health -d healthes
 
 ```
 CREATE ROLE health WITH
-  LOGIN
+    LOGIN
     NOSUPERUSER
     NOCREATEDB
     NOCREATEROLE
@@ -26,9 +26,9 @@ CREATE DATABASE healthes
     WITH
     TEMPLATE = template0
     OWNER = health
-    ENCODING = 'UTF8'
-    LC_COLLATE = 'ja_JP.UTF-8'
-    LC_CTYPE = 'ja_JP.UTF-8'
+    ENCODING = 'utf8'
+    LC_COLLATE = 'ja_JP.utf8'
+    LC_CTYPE = 'ja_JP.utf8'
     CONNECTION LIMIT = -1;
 ```
 
@@ -120,5 +120,5 @@ pg_dump -U health -d healthes -Fc -v -f /dump/`date '+%Y%m%d%H%M%s'`.dump
 ### バクアップをリストアする
 
 ```
-pg_restore -U health -d healthes -v -c --if-exists /dump/2021121403161639451762.dump
+pg_restore -U health -d healthes -v -c --if-exists /dump/2021121403571639454231.dump
 ```
