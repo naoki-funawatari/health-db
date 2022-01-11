@@ -6,8 +6,8 @@ services:
     container_name: health-db
     working_dir: /dump
     volumes:
-      - /D/Projects/health-db/dump:/dump
-      - /D/Projects/health-db/data:/var/lib/postgresql/data
+      - /C/Projects/health-db/dump:/dump
+      - /C/Projects/health-db/data:/var/lib/postgresql/data
     ports:
       - 6432:5432
     environment:
